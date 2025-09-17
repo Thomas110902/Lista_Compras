@@ -1,0 +1,113 @@
+.contenedor-compras {
+  width: 40rem;
+  height: 60rem;
+  margin: 20px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-compras {    
+  padding-left:50px ;  
+  font-size: 1.5rem;
+  text-align: center;
+  color: #001f3d;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+.btn-descarga{
+      padding-left:30px ;  
+    width: 70px;
+    height: 40px;
+}
+.total-monto {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.contenedor-editables {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.editable-nombre,
+.editable-precio {
+  flex: 1 1 140px;
+  background: #f9fbff;
+  border: 1px solid #cfd8e3;
+  padding: 10px 12px;
+  border-radius: 12px;
+  min-height: 38px;
+  cursor: text;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.editable-nombre:focus,
+.editable-precio:focus {
+  border-color: #0a74da;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(10, 116, 218, 0.3);
+}
+
+
+.btn-agregar {
+  background: linear-gradient(135deg, #00284e, #004080);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-agregar:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #085bb1, #022e6f);
+}
+.subtitulo-compras{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-compras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.lista-compras .item {
+  display: flex;
+  justify-content: space-between;
+  background: #f4f6f9;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  border: 1px solid #e0e6ed;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lista-compras .item:hover {
+  background: #e9f2ff;
+  transform: translateX(4px);
+}
