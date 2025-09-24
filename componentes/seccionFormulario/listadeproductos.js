@@ -7,6 +7,6 @@ const listaProductos = [
     { nombre: "Queso", precio: 15.00 },
     { nombre: "Arroz", precio: 8.50 },
     { nombre: "Frijoles", precio: 7.25 },
-];
+];  
 
 export { listaProductos };

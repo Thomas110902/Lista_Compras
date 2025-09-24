@@ -1,22 +1,24 @@
-import { obtenerProductos, guardarProductos } from "./controll/milocalStorage.js";
 import { crearHeader } from "./componentes/headerComponent/header.js";
 import { seccion2 } from "./componentes/seccionCompras/seccion.js";
+import { guardarProductos } from "./controll/milocalStorage.js";
 
-function seccion1 (){
+
+
+function seccion1() {
    let seccion = document.createElement('section');
-   let listaProductos = obtenerProductos();
+   seccion.id = "listaProductos";
+   
+   guardarProductos([]);
+    
+    document.body.appendChild(crearHeader());
 
-   if(listaProductos.length === 0){
-        listaProductos = [];
-        guardarProductos(listaProductos);
-   }
+    
+    const contenedorCompras = seccion2();
+    seccion.appendChild(contenedorCompras);
 
-   console.log(listaProductos);
-
-   document.body.appendChild(crearHeader());
-   document.body.appendChild(seccion2());
-
-   return seccion;
+   
+    document.body.appendChild(seccion);
+    return seccion;
 }
 
 document.body.appendChild(seccion1());

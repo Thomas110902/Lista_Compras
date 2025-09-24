@@ -1,32 +1,30 @@
 import { obtenerProductos, guardarProductos } from "../../controll/milocalStorage.js";
+import { descargar } from "../../controll/descargar.js";
 
 function seccion2() {
     let contenedor = document.createElement('div');
     contenedor.className = "contenedor-compras";
 
+    
     let titulo = document.createElement('h2');
     titulo.className = "titulo-compras";
     titulo.innerText = "TOTAL DE COMPRAS";
     contenedor.appendChild(titulo);
 
+  
     let img = document.createElement('img');
-    img.className= "btn-descarga";
-    img.src="./assets/descarga.png";
+    img.className = "btn-descarga";
+    img.src = "./assets/descarga.png";
+    img.style.cursor = "pointer";
     titulo.appendChild(img);
 
-    // El total
-    let total = document.createElement('h3');
-    total.className = "total-monto";
-    total.innerText = "Q. 00.00";
-    contenedor.appendChild(total);
-
-    // Subtitulo
+    
     let subTitulo = document.createElement('h3');
     subTitulo.className = "subtitulo-compras";
     subTitulo.innerText = "Lista de Compras";
     contenedor.appendChild(subTitulo);
 
-    //Cajas
+    
     let contEditable = document.createElement('div');
     contEditable.className = "contenedor-editables";
 
@@ -49,29 +47,56 @@ function seccion2() {
 
     contenedor.appendChild(contEditable);
 
-    //  Contenedor para los productos 
+    
+    let contListaTotal = document.createElement('div');
+    contListaTotal.id = "soloLista"; 
+    contenedor.appendChild(contListaTotal);
+
+    
+    let total = document.createElement('h3');
+    total.className = "total-monto";
+    total.innerText = "Q. 0.00";
+    contListaTotal.appendChild(total);
+
+   
     let contListaProductos = document.createElement('div');
     contListaProductos.className = "lista-productos";
-    contenedor.appendChild(contListaProductos);
+    contListaTotal.appendChild(contListaProductos);
 
-    //  Evento botón Agregar 
+    
+    img.addEventListener("click", () => {
+        descargar("soloLista");
+    });
+
+    
     botonAgregar.addEventListener('click', () => {
         let nombre = nombreEditable.innerText; 
-        let precio = precioEditable.innerText;
+        let precioTexto = precioEditable.innerText;
 
-        // Crear div del producto
-        let item = document.createElement('div');
-        item.className = "item-producto";
-        item.innerText = `${nombre} - Q. ${precio}`;
-        contListaProductos.appendChild(item);
+  
+        let precio = parseFloat(precioTexto.replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
 
-        // Guardar en localStorage
+      
         let carritoLocalStorage = obtenerProductos();
         carritoLocalStorage.push({ nombre, precio });
         guardarProductos(carritoLocalStorage);
 
-        console.log("Producto agregado al Local Storage:", { nombre, precio });
+      
+        contListaProductos.innerHTML = "";
 
+       
+        let sumaTotal = 0;
+        carritoLocalStorage.forEach((p) => {
+            let item = document.createElement('div');
+            item.className = "item-producto";
+            item.innerText = `${p.nombre} - Q. ${p.precio.toFixed(2)}`;
+            contListaProductos.appendChild(item);
+
+            sumaTotal += p.precio;
+        });
+
+     
+        total.innerText = `Q. ${sumaTotal.toFixed(2)}`;
     });
 
     return contenedor;

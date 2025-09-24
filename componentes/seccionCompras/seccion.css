@@ -111,3 +111,74 @@
   background: #e9f2ff;
   transform: translateX(4px);
 }
+/* ===== Diseño para tablets ===== */
+@media (max-width: 1024px) {
+  .contenedor-compras {
+    width: 30rem;
+    height: auto; /* Ajusta altura automáticamente */
+    padding: 20px;
+  }
+
+  .titulo-compras {
+    font-size: 1.3rem;
+    padding-left: 20px;
+  }
+
+  .btn-descarga {
+    width: 60px;
+    height: 35px;
+  }
+
+  .total-monto {
+    font-size: 1.1rem;
+  }
+
+  .editable-nombre,
+  .editable-precio {
+    flex: 1 1 120px;
+    font-size: 0.9rem;
+  }
+
+  .btn-agregar {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Diseño para teléfonos ===== */
+/* ===== Diseño para teléfonos ===== */
+@media (max-width: 600px) {
+  .contenedor-compras {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+   
+    align-items: center; /* centramos todo */
+    justify-content: center;
+  }
+
+  .contenedor-editables {
+    gap: 10px;
+    justify-content: center; /* centramos cajas */
+    flex-wrap: wrap;
+  }
+
+  .editable-nombre,
+  .editable-precio {
+    flex: 1 1 120px; /* cajas más pequeñas */
+    min-height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .btn-agregar {
+    padding: 8px 12px; /* botón más pequeño */
+    font-size: 0.85rem;
+  }
+
+  .titulo-compras,
+  .subtitulo-compras,
+  .total-monto {
+    text-align: center; /* mantenemos todo centrado */
+  }
+}
