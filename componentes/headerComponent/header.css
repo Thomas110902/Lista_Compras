@@ -1,5 +1,6 @@
 .div-header {
     width: 1000px;
+    max-width: 95%; /* para que nunca se salga de la pantalla */
     height: 80px;
     background: linear-gradient(135deg, #022252, #044f99);
     color: white;
@@ -12,4 +13,26 @@
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
     text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+/* ===== Para tablets ===== */
+@media (max-width: 1024px) {
+    .div-header {
+        height: 70px;
+        font-size: 28px;
+        padding: 18px;
+        margin-bottom: 3rem;
+    }
+}
+
+/* ===== Para teléfonos ===== */
+@media (max-width: 600px) {
+    .div-header {
+        width: 90%;
+        height: 60px;
+        font-size: 20px;
+        padding: 12px;
+        margin-bottom: 2rem;
+    }
 }

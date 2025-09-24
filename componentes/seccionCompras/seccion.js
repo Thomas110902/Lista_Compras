@@ -5,7 +5,7 @@ function seccion2() {
     let contenedor = document.createElement('div');
     contenedor.className = "contenedor-compras";
 
-    
+    // Título
     let titulo = document.createElement('h2');
     titulo.className = "titulo-compras";
     titulo.innerText = "TOTAL DE COMPRAS";
