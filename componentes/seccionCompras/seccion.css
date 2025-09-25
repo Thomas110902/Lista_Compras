@@ -72,9 +72,10 @@
   border: none;
   border-radius: 12px;
   padding: 10px 18px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+ 
 }
 
 .btn-agregar:hover {
@@ -111,6 +112,21 @@
   background: #e9f2ff;
   transform: translateX(4px);
 }
+.btn-limpiar {
+    width: 60px;
+    height: 40px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00284e, #004080);
+    color: white;
+    color: white;
+    font-weight: bold;
+    
+  
+}
+
+
 /* ===== Diseño para tablets ===== */
 @media (max-width: 1024px) {
   .contenedor-compras {

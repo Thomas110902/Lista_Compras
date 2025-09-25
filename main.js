@@ -8,7 +8,7 @@ function seccion1() {
    let seccion = document.createElement('section');
    seccion.id = "listaProductos";
    
-   guardarProductos([]);
+   
     
     document.body.appendChild(crearHeader());
 

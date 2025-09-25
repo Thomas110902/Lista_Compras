@@ -9,4 +9,4 @@ function descargar(nombreContenedor){
         });
 }   
 
-export {descargar}
+export {descargar};
